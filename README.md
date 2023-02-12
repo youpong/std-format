@@ -1,6 +1,6 @@
 # README.md
 
-Sample program using std::format introduced in C++20, similar to Python3's f-string.
+Sample program using std::format introduced in C++20, similar to Python3's f-Strings.
 
 ## Prerequisites
 
