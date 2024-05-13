@@ -2,9 +2,9 @@ TARGET = main
 SRCS   = $(wildcard *.cpp)
 OBJS   = $(SRCS:.cpp=.o)
 
-CXX = clang++-15
-CXXFLAGS = -std=c++20 -stdlib=libc++ -fexperimental-library
-LIBS = -lc++ -lc++experimental
+CXX = @CXX@
+CXXFLAGS = -std=c++20 -stdlib=libc++ -fexperimental-library @CXXFLAGS@
+LIBS = -lc++ -lc++experimental @LIBS@
 
 .PHONY: all clean run
 all: $(TARGET)
