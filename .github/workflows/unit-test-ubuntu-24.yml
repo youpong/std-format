@@ -13,16 +13,16 @@ on:
 jobs:
   unit-test:
     runs-on: ubuntu-24.04
-      steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-node@v4
-          with:
-            node-version: '20'
-        - run: npm install -g bats
-        - run: bats -v
-        - name: configure
-          run: ./configure --with-cxx=clang++
-        - name: build
-          run: make
-        - name: check
-          run: make check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install -g bats
+      - run: bats -v
+      - name: configure
+        run: ./configure --with-cxx=clang++
+      - name: build
+        run: make
+      - name: check
+        run: make check
