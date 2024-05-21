@@ -19,9 +19,16 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
-    - name: setup for public beta of Ubuntu 24
+    - name: setup node for public beta of Ubuntu 24.04
       if: ${{ matrix.os == 'ubuntu-24.04' }}
-      run: npm install -g bats
+      uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+    - name: setup for public beta of Ubuntu 24.04
+      if: ${{ matrix.os == 'ubuntu-24.04' }}
+      run: |
+        npm install -g bats
+        bats -v
     - name: Install GNU Getopt on macOS
       if: ${{ matrix.os == 'macos-latest' }}
       run: brew install gnu-getopt
