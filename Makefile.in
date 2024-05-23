@@ -3,7 +3,7 @@ SRCS   = $(wildcard *.cpp)
 OBJS   = $(SRCS:.cpp=.o)
 
 CXX = @CXX@
-CXXFLAGS = -std=c++20 @CXXFLAGS@
+CXXFLAGS = -std=c++20 -Wall -Wextra --pedantic-errors @CXXFLAGS@
 LIBS = @LIBS@
 
 .PHONY: all clean check run
